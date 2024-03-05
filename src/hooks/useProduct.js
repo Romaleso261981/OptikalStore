@@ -9,8 +9,6 @@ const useProduct = (id) => {
     state.products.items.find((item) => item.id === id)
   );
 
-  console.log("storeProduct", storeProduct);
-
   const [product, setProduct] = useState(storeProduct);
   const [isLoading, setLoading] = useState(false);
   const [error, setError] = useState(null);

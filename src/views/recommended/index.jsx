@@ -5,7 +5,7 @@ import {
   useRecommendedProducts,
   useScrollTop
 } from "@/hooks";
-import bannerImg from "@/images/banner-girl.png";
+import bannerImg from "@/images/banner-girl-2.png";
 import React from "react";
 
 const RecommendedProducts = () => {
