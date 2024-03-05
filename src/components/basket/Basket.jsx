@@ -16,6 +16,7 @@ const Basket = () => {
     basket: state.basket,
     user: state.auth
   }));
+
   const history = useHistory();
   const { pathname } = useLocation();
   const dispatch = useDispatch();

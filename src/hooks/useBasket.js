@@ -16,7 +16,6 @@ const useBasket = () => {
       dispatch(removeFromBasket(product.id));
       displayActionMessage("Item removed from basket", "info");
     } else {
-      console.log("dispatchAddToBasket", dispatchAddToBasket);
       dispatch(dispatchAddToBasket(product));
       displayActionMessage("Item added to basket", "success");
     }
