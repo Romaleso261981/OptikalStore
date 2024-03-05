@@ -115,7 +115,7 @@ class Firebase {
               .collection("products")
               .orderBy(app.firestore.FieldPath.documentId())
               .startAfter(lastRefKey)
-              .limit(1);
+              .limit(6);
 
             const snapshot = await query.get();
             const products = [];

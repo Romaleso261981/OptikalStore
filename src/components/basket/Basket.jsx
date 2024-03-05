@@ -12,19 +12,10 @@ import { clearBasket } from "@/redux/actions/basketActions";
 
 const Basket = () => {
   const { isOpenModal, onOpenModal, onCloseModal } = useModal();
-  // const { basket, user } = useSelector((state) => ({
-  //   basket: state.basket,
-  //   user: state.auth
-  // }));
-  const basket = [
-    {
-      id: "1",
-      name: "Roma",
-      image: "https://images.prom.ua/5125569884_vorota-kovani-rozpashni.jpg"
-    }
-  ];
-  const user = [];
-
+  const { basket, user } = useSelector((state) => ({
+    basket: state.basket,
+    user: state.auth
+  }));
   const history = useHistory();
   const { pathname } = useLocation();
   const dispatch = useDispatch();

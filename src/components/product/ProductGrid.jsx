@@ -15,18 +15,14 @@ const ProductGrid = ({ products }) => {
               product={product}
             />
           ))
-        : products.map((product) => {
-            console.log("product", product);
-
-            return (
-              <ProductItem
-                key={product.id}
-                isItemOnBasket={isItemOnBasket}
-                addToBasket={addToBasket}
-                product={product}
-              />
-            );
-          })}
+        : products.map((product) => (
+            <ProductItem
+              key={product.id}
+              isItemOnBasket={isItemOnBasket}
+              addToBasket={addToBasket}
+              product={product}
+            />
+          ))}
     </div>
   );
 };
