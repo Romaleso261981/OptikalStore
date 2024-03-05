@@ -115,7 +115,7 @@ class Firebase {
               .collection("products")
               .orderBy(app.firestore.FieldPath.documentId())
               .startAfter(lastRefKey)
-              .limit(12);
+              .limit(1);
 
             const snapshot = await query.get();
             const products = [];
@@ -212,7 +212,7 @@ class Firebase {
             // MERGE PRODUCTS
             const mergedProducts = [
               ...searchedNameProducts,
-              ...searchedKeywordsProducts,
+              ...searchedKeywordsProducts
             ];
             const hash = {};
 
