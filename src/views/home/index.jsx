@@ -42,7 +42,7 @@ const Home = () => {
             <p>Продаж та встановлення</p>
             <p>Доставка</p>
             <Link to={SHOP} className="button">
-              Замовити &nbsp;
+              Придбати кондиціонер &nbsp;
               <ArrowRightOutlined />
             </Link>
           </div>
