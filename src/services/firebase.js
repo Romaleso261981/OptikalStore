@@ -102,7 +102,7 @@ class Firebase {
 
   // // PRODUCT ACTIONS --------------
 
-  getSingleProduct = (id) => this.db.collection("products").doc(id).get();
+  getSingleProduct = (id) => this.db.collection("conditions").doc(id).get();
 
   getProducts = (lastRefKey) => {
     let didTimeout = false;
@@ -112,7 +112,7 @@ class Firebase {
         if (lastRefKey) {
           try {
             const query = this.db
-              .collection("products")
+              .collection("conditions")
               .orderBy(app.firestore.FieldPath.documentId())
               .startAfter(lastRefKey)
               .limit(6);
@@ -126,7 +126,7 @@ class Firebase {
 
             resolve({ products, lastKey });
           } catch (e) {
-            reject(e?.message || ":( Failed to fetch products.");
+            reject(e?.message || ":( Failed to fetch conditions.");
           }
         } else {
           const timeout = setTimeout(() => {
@@ -135,10 +135,10 @@ class Firebase {
           }, 15000);
 
           try {
-            const totalQuery = await this.db.collection("products").get();
+            const totalQuery = await this.db.collection("conditions").get();
             const total = totalQuery.docs.length;
             const query = this.db
-              .collection("products")
+              .collection("conditions")
               .orderBy(app.firestore.FieldPath.documentId())
               .limit(12);
             const snapshot = await query.get();
@@ -155,7 +155,7 @@ class Firebase {
             }
           } catch (e) {
             if (didTimeout) return;
-            reject(e?.message || ":( Failed to fetch products.");
+            reject(e?.message || ":( Failed to fetch conditions.");
           }
         }
       })();
