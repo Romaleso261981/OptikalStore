@@ -5,11 +5,11 @@ import {
   useRecommendedProducts,
   useScrollTop
 } from "@/hooks";
-import bannerImg from "@/images/banner-girl-2.png";
+import bannerImg from "@/images/ladclimatservice/слайд-1-2048x898.png";
 import React from "react";
 
 const RecommendedProducts = () => {
-  useDocumentTitle("Recommended Products | Salinaka");
+  useDocumentTitle("Рекомендовані");
   useScrollTop();
 
   const { recommendedProducts, fetchRecommendedProducts, isLoading, error } =
@@ -20,7 +20,8 @@ const RecommendedProducts = () => {
       <div className="featured">
         <div className="banner">
           <div className="banner-desc">
-            <h1>Recommended Products</h1>
+            <h1>Підібранні для Вас</h1>
+            <p>Ви вибираєте ми встановлюємо</p>
           </div>
           <div className="banner-img">
             <img src={bannerImg} alt="" />

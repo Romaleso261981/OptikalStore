@@ -1,18 +1,14 @@
 import { ArrowRightOutlined } from "@ant-design/icons";
 import { MessageDisplay } from "@/components/common";
 import { ProductShowcaseGrid } from "@/components/product";
-import {
-  FEATURED_PRODUCTS,
-  RECOMMENDED_PRODUCTS,
-  SHOP
-} from "@/constants/routes";
+import { OUR_WORKS, RECOMMENDED_PRODUCTS, SHOP } from "@/constants/routes";
 import {
   useDocumentTitle,
   useFeaturedProducts,
   useRecommendedProducts,
   useScrollTop
 } from "@/hooks";
-import bannerImg from "@/images/ladclimatservice/слайд-1-2048x898.png";
+import bannerImg from "@/images/ladclimatservice/Dr6JgDcFEE.jpg";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -40,25 +36,24 @@ const Home = () => {
           <div className="banner-desc">
             <h1 className="text-thin">
               Кондиціонери від&nbsp;
-              <strong>10000 грн</strong>
-              <strong>&nbsp; Midea</strong>
+              <strong>7899 грн</strong>
+              <strong>&nbsp; Midea Idea C&H</strong>
             </h1>
-            <p>Продаж встановлення</p>
+            <p>Продаж та встановлення</p>
             <p>Доставка</p>
-            <br />
             <Link to={SHOP} className="button">
-              Shop Now &nbsp;
+              Замовити &nbsp;
               <ArrowRightOutlined />
             </Link>
           </div>
           <div className="banner-img">
-            {/* <img src={bannerImg} alt="" /> */}
+            <img src={bannerImg} alt="" />
           </div>
         </div>
         <div className="display">
           <div className="display-header">
             <h1>Рекомендовані кондиціонери</h1>
-            <Link to={FEATURED_PRODUCTS}>Показати більше</Link>
+            <Link to={OUR_WORKS}>Показати більше</Link>
           </div>
           {errorFeatured && !isLoadingFeatured ? (
             <MessageDisplay

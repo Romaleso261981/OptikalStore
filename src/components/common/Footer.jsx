@@ -42,7 +42,7 @@ const Footer = () => {
           <li>
             <NavLink
               activeClassName="navigation-menu-active"
-              to={ROUTE.FEATURED_PRODUCTS}
+              to={ROUTE.OUR_WORKS}
             >
               <strong>Наші роботи</strong>
             </NavLink>

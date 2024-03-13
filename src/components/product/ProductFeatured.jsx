@@ -5,6 +5,7 @@ import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { useHistory } from "react-router-dom";
 
 const ProductFeatured = ({ product }) => {
+  const { imageURL, title = "Наші роботи", brand = "Midea" } = product;
   const history = useHistory();
   const onClickItem = () => {
     if (!product) return;
@@ -20,16 +21,16 @@ const ProductFeatured = ({ product }) => {
         role="presentation"
       >
         <div className="product-display-img">
-          {product.imageURL ? (
-            <ImageLoader className="product-card-img" src={product.imageURL} />
+          {imageURL ? (
+            <ImageLoader className="product-card-img" src={imageURL} />
           ) : (
             <Skeleton width="100%" height="100%" />
           )}
         </div>
         <div className="product-display-details">
-          <h2>{product.title || <Skeleton width={80} />}</h2>
+          <h2>{title || <Skeleton width={80} />}</h2>
           <p className="text-subtle text-italic">
-            {product.brand || <Skeleton width={40} />}
+            {brand || <Skeleton width={40} />}
           </p>
         </div>
       </div>
