@@ -1,12 +1,12 @@
 /* eslint-disable no-nested-ternary */
-import { useDidMount } from '@/hooks';
-import PropType from 'prop-types';
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useHistory, withRouter } from 'react-router-dom';
-import { applyFilter, resetFilter } from '@/redux/actions/filterActions';
-import { selectMax, selectMin } from '@/selectors/selector';
-import PriceRange from './PriceRange';
+import { useDidMount } from "@/hooks";
+import PropType from "prop-types";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory, withRouter } from "react-router-dom";
+import { applyFilter, resetFilter } from "@/redux/actions/filterActions";
+import { selectMax, selectMin } from "@/selectors/selector";
+import PriceRange from "./PriceRange";
 
 const Filters = ({ closeModal }) => {
   const { filter, isLoading, products } = useSelector((state) => ({
@@ -29,7 +29,7 @@ const Filters = ({ closeModal }) => {
 
   useEffect(() => {
     if (didMount && window.screen.width <= 480) {
-      history.push('/');
+      history.push("/");
     }
 
     if (didMount && closeModal) closeModal();
@@ -38,14 +38,12 @@ const Filters = ({ closeModal }) => {
     window.scrollTo(0, 0);
   }, [filter]);
 
-
   const onPriceChange = (minVal, maxVal) => {
     setFilter({ ...field, minPrice: minVal, maxPrice: maxVal });
   };
 
   const onBrandFilterChange = (e) => {
     const val = e.target.value;
-
     setFilter({ ...field, brand: val });
   };
 
@@ -54,7 +52,9 @@ const Filters = ({ closeModal }) => {
   };
 
   const onApplyFilter = () => {
-    const isChanged = Object.keys(field).some((key) => field[key] !== filter[key]);
+    const isChanged = Object.keys(field).some(
+      (key) => field[key] !== filter[key]
+    );
 
     if (field.minPrice > field.maxPrice) {
       return;
@@ -68,7 +68,7 @@ const Filters = ({ closeModal }) => {
   };
 
   const onResetFilter = () => {
-    const filterFields = ['brand', 'minPrice', 'maxPrice', 'sortBy'];
+    const filterFields = ["brand", "minPrice", "maxPrice", "sortBy"];
 
     if (filterFields.some((key) => !!filter[key])) {
       dispatch(resetFilter());

@@ -1,17 +1,23 @@
-import { ArrowRightOutlined } from '@ant-design/icons';
-import { MessageDisplay } from '@/components/common';
-import { ProductShowcaseGrid } from '@/components/product';
-import { FEATURED_PRODUCTS, RECOMMENDED_PRODUCTS, SHOP } from '@/constants/routes';
+import { ArrowRightOutlined } from "@ant-design/icons";
+import { MessageDisplay } from "@/components/common";
+import { ProductShowcaseGrid } from "@/components/product";
 import {
-  useDocumentTitle, useFeaturedProducts, useRecommendedProducts, useScrollTop
-} from '@/hooks';
-import bannerImg from '@/images/banner-girl.png';
-import React from 'react';
-import { Link } from 'react-router-dom';
-
+  FEATURED_PRODUCTS,
+  RECOMMENDED_PRODUCTS,
+  SHOP
+} from "@/constants/routes";
+import {
+  useDocumentTitle,
+  useFeaturedProducts,
+  useRecommendedProducts,
+  useScrollTop
+} from "@/hooks";
+import bannerImg from "@/images/ladclimatservice/слайд-1-2048x898.png";
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
-  useDocumentTitle('Salinaka | Home');
+  useDocumentTitle("Продаж кондиціонерів Midea Idea");
   useScrollTop();
 
   const {
@@ -33,28 +39,28 @@ const Home = () => {
         <div className="banner">
           <div className="banner-desc">
             <h1 className="text-thin">
-              <strong>See</strong>
-              &nbsp;everything with&nbsp;
-              <strong>Clarity</strong>
+              Кондиціонери від&nbsp;
+              <strong>10000 грн</strong>
+              <strong>&nbsp; Midea</strong>
             </h1>
-            <p>
-              Buying eyewear should leave you happy and good-looking, with money in your pocket.
-              Glasses, sunglasses, and contacts—we’ve got your eyes covered.
-            </p>
+            <p>Продаж встановлення</p>
+            <p>Доставка</p>
             <br />
             <Link to={SHOP} className="button">
               Shop Now &nbsp;
               <ArrowRightOutlined />
             </Link>
           </div>
-          <div className="banner-img"><img src={bannerImg} alt="" /></div>
+          <div className="banner-img">
+            {/* <img src={bannerImg} alt="" /> */}
+          </div>
         </div>
         <div className="display">
           <div className="display-header">
-            <h1>Featured Products</h1>
-            <Link to={FEATURED_PRODUCTS}>See All</Link>
+            <h1>Рекомендовані кондиціонери</h1>
+            <Link to={FEATURED_PRODUCTS}>Показати більше</Link>
           </div>
-          {(errorFeatured && !isLoadingFeatured) ? (
+          {errorFeatured && !isLoadingFeatured ? (
             <MessageDisplay
               message={errorFeatured}
               action={fetchFeaturedProducts}
@@ -67,12 +73,12 @@ const Home = () => {
             />
           )}
         </div>
-        <div className="display">
+        {/* <div className="display">
           <div className="display-header">
             <h1>Recommended Products</h1>
             <Link to={RECOMMENDED_PRODUCTS}>See All</Link>
           </div>
-          {(errorRecommended && !isLoadingRecommended) ? (
+          {errorRecommended && !isLoadingRecommended ? (
             <MessageDisplay
               message={errorRecommended}
               action={fetchRecommendedProducts}
@@ -84,7 +90,7 @@ const Home = () => {
               skeletonCount={6}
             />
           )}
-        </div>
+        </div> */}
       </div>
     </main>
   );

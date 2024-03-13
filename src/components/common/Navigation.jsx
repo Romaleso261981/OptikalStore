@@ -1,7 +1,7 @@
 /* eslint-disable indent */
 import { FilterOutlined, ShoppingOutlined } from "@ant-design/icons";
 import * as ROUTE from "@/constants/routes";
-import logo from "@/images/logo-full.png";
+import logo from "@/images/ladclimatservice/лого-89.png";
 import React, { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import { Link, NavLink, useLocation } from "react-router-dom";
@@ -68,7 +68,7 @@ const Navigation = () => {
   return (
     <nav className="navigation" ref={navbar}>
       <div className="logo">
-        <Link onClick={onClickLink} to="/">
+        <Link onClick={onClickLink} to={ROUTE.HOME}>
           <img alt="Logo" src={logo} />
         </Link>
       </div>
@@ -79,12 +79,12 @@ const Navigation = () => {
             exact
             to={ROUTE.HOME}
           >
-            Home
+            Головна
           </NavLink>
         </li>
         <li>
           <NavLink activeClassName="navigation-menu-active" to={ROUTE.SHOP}>
-            Shop
+            Mагазин
           </NavLink>
         </li>
         <li>
@@ -92,7 +92,7 @@ const Navigation = () => {
             activeClassName="navigation-menu-active"
             to={ROUTE.FEATURED_PRODUCTS}
           >
-            Featured
+            Наші роботи
           </NavLink>
         </li>
         <li>
@@ -100,11 +100,11 @@ const Navigation = () => {
             activeClassName="navigation-menu-active"
             to={ROUTE.RECOMMENDED_PRODUCTS}
           >
-            Recommended
+            Рекомендовані
           </NavLink>
         </li>
       </ul>
-      {(pathname === ROUTE.SHOP || pathname === ROUTE.SEARCH) && (
+      {pathname === ROUTE.SEARCH && (
         <FiltersToggle>
           <button className="button-muted button-small" type="button">
             Filters &nbsp;
