@@ -241,7 +241,7 @@ class Firebase {
 
   getRecommendedProducts = (itemsCount = 12) =>
     this.db
-      .collection("products")
+      .collection("conditions")
       .where("isRecommended", "==", true)
       .limit(itemsCount)
       .get();

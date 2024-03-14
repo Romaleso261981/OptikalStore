@@ -107,8 +107,13 @@ const ViewProduct = () => {
             </div>
             <div className="product-modal-details">
               <br />
-              <span className="text-subtle">{product.brand}</span>
-              <h1 className="margin-top-0">{product.name}</h1>
+              <div className="product-modal-code">
+                <div className="code-wrapper">
+                  <span className="text-code-subtle">code -- </span>
+                  <span className="text-code">{product.code}</span>
+                </div>
+              </div>
+              <h1 className="margin-top-0">{product.title}</h1>
               <span>{product.description}</span>
               <br />
               <br />

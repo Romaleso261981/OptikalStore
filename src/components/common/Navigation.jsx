@@ -55,16 +55,16 @@ const Navigation = () => {
   if (store.user && store.user.role === "ADMIN") {
     return null;
   }
-  if (window.screen.width <= 800) {
-    return (
-      <MobileNavigation
-        // eslint-disable-next-line react/jsx-props-no-spreading
-        {...store}
-        disabledPaths={basketDisabledpathnames}
-        pathname={pathname}
-      />
-    );
-  }
+  // if (window.screen.width <= 800) {
+  //   return (
+  //     <MobileNavigation
+  //       // eslint-disable-next-line react/jsx-props-no-spreading
+  //       {...store}
+  //       disabledPaths={basketDisabledpathnames}
+  //       pathname={pathname}
+  //     />
+  //   );
+  // }
   return (
     <nav className="navigation" ref={navbar}>
       <div className="logo">
@@ -112,7 +112,7 @@ const Navigation = () => {
           </button>
         </FiltersToggle>
       )}
-      <SearchBar />
+      {/* <SearchBar /> */}
       <ul className="navigation-menu">
         <li className="navigation-menu-item">
           <BasketToggle>
@@ -130,7 +130,7 @@ const Navigation = () => {
             )}
           </BasketToggle>
         </li>
-        {store.user ? (
+        {/* {store.user ? (
           <li className="navigation-menu-item">
             <UserAvatar />
           </li>
@@ -155,7 +155,7 @@ const Navigation = () => {
               </Link>
             )}
           </li>
-        )}
+        )} */}
       </ul>
     </nav>
   );
