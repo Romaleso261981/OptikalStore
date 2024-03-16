@@ -1,5 +1,5 @@
 import React from "react";
-import logoWordmark from "../../../static/favicon1.png";
+import logoWordmark from "/static/favicon1.png";
 
 const Preloader = () => (
   <div className="preloader">
